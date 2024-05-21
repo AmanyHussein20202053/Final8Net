@@ -1,0 +1,86 @@
+﻿@{
+    ViewData["Title"] = "C and C++";
+    Layout = "_LayoutIndex";
+}
+<link href="~/css/course.css" rel="stylesheet">
+<script src="~/js/site.js"></script>
+<body>
+    @* modules *@
+    <h1>Coding for Everyone: C and C++</h1>
+    <h2>Course Content</h2>
+    <div class="title-module">
+        <h2 class="title">Module 1: Introduction to C and Basics <img src="~/img/pngwing.com.png" class="arrow" /> </h2>
+        <div class="drop-content">
+            <p>This is the first paragraph.</p>
+            <p>This is the second paragraph.</p>
+            <p>This is the third paragraph.</p>
+        </div>
+    </div>
+    <div class="title-module">
+        <h2 class="title">Module 2: Control Structures in C <img src="~/img/pngwing.com.png" class="arrow" /> </h2>
+        <div class="drop-content">
+            <p>This is the first paragraph.</p>
+            <p>This is the second paragraph.</p>
+            <p>This is the third paragraph.</p>
+        </div>
+    </div>
+    <div class="title-module">
+        <h2 class="title">Module 3: Functions <img src="~/img/pngwing.com.png" class="arrow" /> </h2>
+        <div class="drop-content">
+            <p>This is the first paragraph.</p>
+            <p>This is the second paragraph.</p>
+            <p>This is the third paragraph.</p>
+        </div>
+    </div>
+    <div class="title-module">
+        <h2 class="title">Module 4: Pointers in C <img src="~/img/pngwing.com.png" class="arrow" /> </h2>
+        <div class="drop-content">
+            <p>This is the first paragraph.</p>
+            <p>This is the second paragraph.</p>
+            <p>This is the third paragraph.</p>
+        </div>
+    </div>
+    <div class="title-module">
+        <h2 class="title">Module 5: Arrays in C <img src="~/img/pngwing.com.png" class="arrow" /> </h2>
+        <div class="drop-content">
+            <p>This is the first paragraph.</p>
+            <p>This is the second paragraph.</p>
+            <p>This is the third paragraph.</p>
+        </div>
+    </div>
+    <div class="title-module">
+        <h2 class="title">Module 6: Files in C <img src="~/img/pngwing.com.png" class="arrow" /> </h2>
+        <div class="drop-content">
+            <p>This is the first paragraph.</p>
+            <p>This is the second paragraph.</p>
+            <p>This is the third paragraph.</p>
+        </div>
+    </div>
+
+    <section style="margin-left: 3%;">
+        <h2>Assignments</h2>
+        <!-- <form> -->
+        <label for="assignment">Upload Assignment:</label>
+        <input type="file" id="submitAssignment" name="assignment" />
+        <br /><br />
+        <button type="submit" onclick="submit()" style="background-color: black; color: white; width: 10%;
+              height: 5%;">
+            Submit
+        </button>
+        <!-- </form> -->
+        <h2 style="margin-top: 4%;">Quiz</h2>
+        <form action="~/Quiz/CPlusPlusQ">
+            <button type="submit" style="background-color: black; color: white; width: 10%;
+                height: 5%;">
+                Take Quiz
+            </button>
+        </form>
+        <p id="response"></p>
+    </section>
+
+ 
+    <!-- Back to Top -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+    <script src="js/main.js"></script>
+</body>

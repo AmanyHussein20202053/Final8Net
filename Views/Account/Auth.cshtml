@@ -1,0 +1,48 @@
+﻿@model Final8Net.Models.AuthViewModel
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Verification";
+}
+<link href="~/css/Auth.css" rel="stylesheet">
+<link href="~/css/site.css" rel="stylesheet">
+<div class="container">
+<form method="post" class="form-horizontal" role="form">
+    <div class="c1">
+        <div class="row-3">
+@using (Html.BeginForm("Auth", "Account",FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <h2>Enter the 6-digits verification code provide in the email.</h2>
+    <hr />
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(m => m.email, new { @class = "col-md-2 control-label" })
+                    <div class="input">
+                        @Html.TextBoxFor(m => m.email, new { @class = "form-control", placeholder = "Email", name = "email", style = "border: none; width: 310; background-color: #eee;", required = "required" })
+                    </div>
+                </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Code, new { @class = "col-md-2 control-label" })
+        <div id="myuser">
+                        @Html.TextBoxFor(m => m.Code, new { @class = "form-control" , placeholder = @Html.DisplayNameFor(m => m.Code), style = "border: none; width: 310; background-color: #eee;", required = "required"})
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <div class="checkbox">
+                @Html.CheckBoxFor(m => m.RememberBrowser)
+                @Html.LabelFor(m => m.RememberBrowser)
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" class="submit" value="Submit" style="margin-left: 35px;" />
+        </div>
+    </div>
+}
+</div>
+</div>
+</form>
+    <img src="~/img/verify.png" alt="verify" class="form-image">
+</div>

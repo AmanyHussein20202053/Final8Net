@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"] - FinalProjectTest</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    
+</head>
+<body>
+    <header>
+        <!-- Header content here -->
+        @RenderSection("Styles", required: false)
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/img/Logo.png" alt="FinalProjectTest Logo" class="logo">
+                </a>
+
+            </div>
+        </nav>
+    </header >
+
+    <div class="container">
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="footer text-muted"">
+        <div class="container" >
+            Copyright &copy; 2024  CleverCampus. All rights reserved. -<a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script> <!-- Include jQuery library -->
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script> <!-- Include Bootstrap JS -->
+    <script src="~/js/footer.js"></script> <!-- Include your custom JavaScript file -->
+</body>
+</html>

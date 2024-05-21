@@ -1,0 +1,37 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/Users.css">
+    <link href="~/css/site.css" rel="stylesheet">
+}<div style="margin-bottom:520px;">
+<label class="role">Choose Your Role:</label>
+<ul class="cont-list">
+    <li>
+        <a href="@Url.Action("Login", "Account", new { role = "Student" })" class="cont-link">
+            <div class="cont">
+                <img src="~/img/Picture6.png" alt="Student">
+                <p class="sign">Student</p>
+            </div>
+        </a>
+    </li>
+    <li>
+        <a href="@Url.Action("Login", "Account", new { role = "Instructor / Teacher" })" class="cont-link">
+            <div class="cont">
+                <img src="~/img/Picture4.png" alt="Instructor / Teacher">
+                <p class="sign">Instructor / Teacher</p>
+            </div>
+        </a>
+    </li>
+    <li>
+        <a href="@Url.Action("Login", "Account", new { role = "Administrator" })" class="cont-link">
+            <div class="cont">
+                <img src="~/img/Picture5.png" alt="Administrator">
+                <p class="sign">Administrator</p>
+            </div>
+        </a>
+    </li>
+</ul>
+</div>
+

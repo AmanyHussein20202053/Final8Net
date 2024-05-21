@@ -1,0 +1,60 @@
+﻿@{
+    ViewData["Title"] = "C++ Quiz";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>C++ Quiz</title>
+</head>
+<body>
+    <div class="container" style="margin-left: 2%;">
+        <div>
+            <h2>Who invented C++?</h2><br>
+            <input type="radio" name="q1">Dennis Ritchie<br>
+            <input type="radio" name="q1">Ken Thompson<br>
+            <input type="radio" name="q1" id="correct1">Bjarne Stroustrup<br>
+            <input type="radio" name="q1">Brian Kernighan<br>
+        </div>
+        <hr>
+        <div>
+            <h2>What is C++?</h2><br>
+            <input type="radio" name="q2">C++ is an object oriented programming language<br>
+            <input type="radio" name="q2">C++ is a procedural programming language<br>
+            <input type="radio" name="q2" id="correct2">C++ supports both procedural and object oriented programming language<br>
+            <input type="radio" name="q2">C++ is a functional programming language<br>
+        </div>
+        <hr>
+        <div>
+            <h2>Which of the following is the correct syntax of including a user defined header files in C++?</h2><br>
+            <input type="radio" name="q3">#include [userdefined]<br>
+            <input type="radio" name="q3">#include <userdefined.h>
+                <br>
+                <input type="radio" name="q3">#include <userdefined>
+                    <br>
+                    <input type="radio" name="q3" id="correct3">#include “userdefined”<br>
+        </div>
+        <hr>
+        <div>
+            <h2>Which of the following is used for comments in C++?</h2><br>
+            <input type="radio" name="q4">/* comment */<br>
+            <input type="radio" name="q4">// comment */<br>
+            <input type="radio" name="q4">// comment<br>
+            <input type="radio" name="q4" id="correct4">both // comment or /* comment */<br>
+        </div>
+        <hr>
+        <div>
+            <h2>Which of the following user-defined header file extension used in c++?</h2><br>
+            <input type="radio" name="q5">hg<br>
+            <input type="radio" name="q5">cpp<br>
+            <input type="radio" name="q5">hf<br>
+            <input type="radio" name="q5" id="correct5">h<br>
+        </div>
+        <hr>
+        <button type="submit" onclick="resultC()" style="background-color: black; color: white; width: 10%;
+        height: 5%; margin-top: 4%;">
+            Finish
+        </button>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+﻿@model Final8Net.Models.LoginViewModel
+@using Microsoft.AspNetCore.Http
+@{
+    bool isLoggedIn = Context.User.Identity.IsAuthenticated;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - FinalProjectTest</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/FinalProjectTest.styles.css" asp-append-version="true" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <!-- Header content here -->
+        @RenderSection("Styles", required: false)
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/img/Logo.png" alt="FinalProjectTest Logo" class="logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-action="courses">Courses</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-action="Privacy">Privacy</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="#body">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="#footer">Contact</a>
+                        </li>
+                        </ul>
+                    @if (isLoggedIn)
+                    {
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Logout">Logout</a>
+                            </li>
+                        </ul>
+
+                    }
+                    else
+                    {
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="User">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Register">Sign Up</a>
+                            </li>
+                        </ul>
+                    }
+                        @* <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Profile">Profile</a>
+                        </li> *@
+                    
+                    @* <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Profile">
+                    <img src="~/img/profile.png" alt="profile" class="profile">
+                    </a> *@
+                    <!-- Navigation links here -->
+                </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            <partial name="_Cookies" />
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer id="footer" class=" footer text-muted">
+        <div class="container-fluid position-relative overlay-top bg-dark text-white-50 py-5" style="margin-top: 90px;">
+            <div class="container mt-5 pt-5 d-flex justify-content-between">
+                <!-- Contact Us Section -->
+                <div class="col-md-6 mb-5">
+                    <h3 class="text-white mb-4" id="Contact">Contact us</h3>
+                    <p><i class="fa fa-map-marker-alt mr-2"></i>End of 90th St., Fifth Settlement, New Cairo</p>
+                    <h3 class="text-white mb-4" id="Contact">Hotline</h3>
+                    <p><i class="fa fa-phone-alt mr-2"></i>16383</p>
+                    <div class="d-flex justify-content-start mt-4">
+                        <a class="text-white mr-4" href="#"><i class="fab fa-2x fa-twitter"></i></a>
+                        <a class="text-white mr-4" href="#"><i class="fab fa-2x fa-facebook-f"></i></a>
+                        <a class="text-white mr-4" href="#"><i class="fab fa-2x fa-linkedin-in"></i></a>
+                        <a class="text-white" href="#"><i class="fab fa-2x fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Our Courses Section -->
+                <div class="col-md-6 mb-5">
+                    <h3 class="text-white mb-4">Our Courses</h3>
+                    <div class="d-flex flex-column justify-content-start">
+                        <a class="text-white-50 mb-2" href="~/Course/WebDesign"><i class="fa fa-angle-right mr-2"></i>Web Design and Development</a>
+                        <a class="text-white-50 mb-2" href="~/Course/CPlusPlus"><i class="fa fa-angle-right mr-2"></i>Coding for Everyone: C and C++</a>
+                        <a class="text-white-50 mb-2" href="~/Course/DataStruct"><i class="fa fa-angle-right mr-2"></i>Data Structures and Algorithms</a>
+                        <a class="text-white-50 mb-2" href="~/Course/Java"><i class="fa fa-angle-right mr-2"></i>Introduction to Java Programming</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright Section -->
+            <div class="container mt-5 pt-5 text-white">
+                <div class="col">
+                    Copyright &copy; 2024  CleverCampus. All rights reserved. -<a asp-area="" asp-controller="Home" asp-action="Privacy" class="container mt-5 pt-5 text-white">Privacy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

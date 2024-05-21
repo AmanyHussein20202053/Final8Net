@@ -1,0 +1,25 @@
+﻿/* This will remove the default list styling and set the nav to be full width */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    margin-left: 25px;
+}
+
+/* This will display the list items side by side */
+nav li {
+    display: inline-block;
+    margin-right: 20px; /* Adjust the space between the links */
+}
+
+/* This will ensure the nav is not inline with the body content */
+body {
+    margin-top: 30px; /* Adjust the space to ensure the nav is separate */
+    width: 200px;
+    height: 60px;
+    margin-left: 20px;
+}
+footer {
+    height: 30%;
+}

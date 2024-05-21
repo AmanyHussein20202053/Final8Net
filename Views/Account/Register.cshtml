@@ -1,0 +1,54 @@
+﻿@{
+    Layout = "_Layout";
+}
+@model Final8Net.Models.UnVerViewModel
+<link href="~/css/Register.css" rel="stylesheet">
+<link href="~/css/site.css" rel="stylesheet">
+<form>
+    <div class="c1">
+        <h2 class="text">Register</h2>
+        <div class="row-3">
+                <div>
+                    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Firstname, new { @class = "col-md-2 control-label" })
+                            <div class="input">
+                                @Html.TextBoxFor(m => m.Firstname, new { @class = "form-control", placeholder = "Firstname",name="name", style = "border: none; width: 310; background-color: #eee;", required = "required" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Lastname, new { @class = "col-md-2 control-label" })
+                            <div class="input">
+                                @Html.TextBoxFor(m => m.Lastname, new { @class = "form-control", placeholder = "Lastname", style = "border: none; width: 310; background-color: #eee;", required = "required" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                            <div class="input">
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Email", name = "email", style = "border: none; width: 310; background-color: #eee;", required = "required" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                            <div class="input">
+                                @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Password", style = "border: none; width: 310; background-color: #eee;", required = "required" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
+                            <div class="input">
+                                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = "Confirm Password", style = "border: none;  width: 310; background-color: #eee;", required = "required" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2">
+                                <input type="submit" value="Register" class="reg" />
+                            </div>
+                        </div>
+                    }
+                </div>
+        </div>
+    </div>
+</form>

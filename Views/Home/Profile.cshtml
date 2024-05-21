@@ -1,0 +1,29 @@
+﻿@model Final8Net.Models.Student
+@{
+    ViewBag.Title = "Profile";
+}
+<div>
+    <h4>Student</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.id)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Firstname)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Lastname)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+ @*        
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Age)
+        </dt> *@
+    </dl>
+</div>

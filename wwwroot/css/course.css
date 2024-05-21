@@ -1,0 +1,78 @@
+﻿body {
+
+}
+h1 {
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 100px;
+}
+/* Styles for the title module */
+.title-module {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 1000px;
+    margin-top: 30px;
+    margin-left: -50px;
+    margin-bottom: 10px; /* Adjusted margin-bottom */
+}
+
+/* Styles for the title */
+.title {
+    cursor: pointer;
+    border-bottom: 1px solid transparent;
+    box-shadow: 0px 0px 10px 2px #9089c5;
+    padding: 15px 0px 15px 68px;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: space-between; /* Align items to the start and end of the container */
+    align-items: center; /* Align items vertically in the center */
+}
+.title-module .title .arrow {
+    width: 25px;
+    margin-right: 47px;
+}
+    /* Styles for the active title */
+    .title.active {
+        border-bottom: 1px solid #ccc; /* Add border when title is clicked */
+    }
+
+/* Styles for the drop-down content */
+.drop-content {
+    display: none;
+    padding: 10px 0;
+}
+
+/* Show drop-down content when title is clicked */
+.title-module.active .drop-content {
+    display: block;
+    padding: 40px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1), 0px 0px 5px rgba(0, 0, 0, 0.1) inset;
+}
+/* site.css */
+
+/* Define custom button styles */
+.custom-btn {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px; /* Add border-radius for rounded corners */
+    border: 1px solid #4CAF50; /* Add border for button-like appearance */
+    transition: background-color 0.3s; /* Add transition for hover effect */
+}
+
+    .custom-btn:hover {
+        background-color: #45a049; /* Darker green on hover */
+    }
+
+
+
+
+

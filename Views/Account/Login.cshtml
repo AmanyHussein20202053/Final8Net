@@ -1,0 +1,59 @@
+﻿@{
+    Layout = "_Layout"; 
+    ViewData["Title"] = "Login";
+}
+@model Final8Net.Models.LoginViewModel
+<link href="~/css/Login.css" rel="stylesheet">
+<link href="~/css/site.css" rel="stylesheet">
+<script src="~/js/site.js"></script>
+<h2>Let's Level Up Our Knowledge</h2>
+<form method="post" class="form-horizontal" role="form" id="login-form" action="@Url.Action("Login", "Account", new { returnUrl = Context.Request.Query["ReturnUrl"] })">
+    <div class="c1">
+        <h2 class="text">Login</h2>
+        <div class="row-3">
+            @Html.AntiForgeryToken()
+            <div class="form-group">
+                @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                <div id="myuser">
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = @Html.DisplayNameFor(m => m.Email), style = "border: none;background-color: #eee;" })
+                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                <div id="mypass">
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = @Html.DisplayNameFor(m => m.Password), style = "border: none;background-color: #eee;" })
+                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div>
+                <div class="col-md-offset-2">
+                    <input type="submit" value="Login" class="submit" />
+                </div>
+            </div>
+            <div class="frt">
+                <p>
+                    @Html.ActionLink("Forgot your password?", "ForgotPassword")
+                </p>
+            </div>
+            <div class="cont">
+                <p class="sign">
+                    @Html.ActionLink("Register as a new user", "Register")
+                </p>
+            </div>
+        </div>
+    </div>
+</form>
+@* <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Get reference to the login form
+        var loginForm = document.getElementById("login-form");
+
+        // Add submit event listener to the login form
+        loginForm.addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent form submission
+            // Redirect to Home/Index page with layout=_LayoutLogout
+            window.location.href = '@Url.Content("~/Home/Index")?layout=_LayoutLogout';
+        });
+    });
+</script> *@
