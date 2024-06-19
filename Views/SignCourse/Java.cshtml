@@ -11,65 +11,498 @@
     <div class="title-module">
         <h2 class="title">Module 1: Introduction <img src="~/img/pngwing.com.png" class="arrow" /> </h2>
         <div class="drop-content">
-            <p>This is the first paragraph.</p>
-            <p>This is the second paragraph.</p>
-            <p>This is the third paragraph.</p>
+            <ul>
+                <li>
+                    What is Java
+                    <p>
+                        Java is a popular programming language, created in 1995.
+
+                        It is owned by Oracle, and more than 3 billion devices run Java.
+
+                        It is used for:
+
+                        Mobile applications (specially Android apps)
+                        ,Desktop applications
+                        ,Web applications
+                        ,Web servers and application servers
+                        ,Games
+                        ,Database connection
+                        And much, much more!
+
+                    </p>
+                </li>
+                <li>
+                    Why Use Java?
+                    <pre>
+
+Java works on different platforms (Windows, Mac, Linux, Raspberry Pi, etc.)
+- It is one of the most popular programming languages in the world
+- It has a large demand in the current job market
+- It is easy to learn and simple to use
+- It is open-source and free
+- It is secure, fast and powerful
+- It has huge community support (tens of millions of developers)
+- Java is an object oriented language which gives a clear structure to programs and allows code to be reused, lowering development costs
+- As Java is close to C++ and C#, it makes it easy for programmers to switch to Java or vice versa
+
+                    </pre>
+                </li>
+            </ul>
         </div>
     </div>
     <div class="title-module">
         <h2 class="title">Module 2: Java Basics <img src="~/img/pngwing.com.png" class="arrow" /> </h2>
         <div class="drop-content">
-            <p>This is the first paragraph.</p>
-            <p>This is the second paragraph.</p>
-            <p>This is the third paragraph.</p>
+            <ul>
+                <li>
+                    Java Syntax
+                    <pre>public class Main {
+  public static void main(String[] args) {
+    System.out.println("Hello World");
+  }
+}
+                    </pre>
+                    <p>
+                        Every line of code that runs in Java must be inside a class. In our example, we named the class Main. A class should always start with an uppercase first letter.
+
+                        Note:   <mark>Java is case-sensitive: "MyClass" and "myclass" has different meaning.</mark>
+                    </p>
+                    <h4>main Method</h4>
+                    <p>
+                        The main() method is required and you will see it in every Java program:
+                    </p>
+                    <pre>
+public static void main(String[] args)
+                    </pre>
+                    <p>
+                        Any code inside the main() method will be executed. Don't worry about the keywords before and after main. You will get to know them bit by bit while reading this tutorial.
+
+                        For now, just remember that every Java program has a class name which must match the filename, and that every program must contain the main() method.
+                    </p>
+                    <h4>System.out.println()</h4>
+                    <p>
+                        Inside the main() method, we can use the println() method to print a line of text to the screen:
+                    </p>
+                    <pre>public static void main(String[] args) {
+  System.out.println("Hello World");
+}
+                    </pre>
+                </li>
+            </ul>
         </div>
     </div>
     <div class="title-module">
         <h2 class="title">Module 3: Primitive Data Types, Variables and Arrays <img src="~/img/pngwing.com.png" class="arrow" /> </h2>
         <div class="drop-content">
-            <p>This is the first paragraph.</p>
-            <p>This is the second paragraph.</p>
-            <p>This is the third paragraph.</p>
+            <ul>
+                <li>
+                    Primitive types and variables
+                    <p>
+                        Variables are containers for storing data values.
+
+                        In Java, there are different types of variables, for example:
+                    </p>
+                    <pre>
+    String - stores text, such as "Hello". String values are surrounded by double quotes
+    int - stores integers (whole numbers), without decimals, such as 123 or -123
+    float - stores floating point numbers, with decimals, such as 19.99 or -19.99
+    char - stores single characters, such as 'a' or 'B'. Char values are surrounded by single quotes
+    boolean - stores values with two states: true or false
+
+                    </pre>
+                    <p>
+                        Data types are divided into two groups:
+                    </p>
+                    <pre>
+
+    Primitive data types - includes byte, short, int, long, float, double, boolean and char
+    Non-primitive data types - such as String, Arrays and Classes (you will learn more about these in a later chapter)
+
+                    </pre>
+                    <h4>Primitive Data Types</h4>
+                    <pre>byte 	1 byte 	Stores whole numbers from -128 to 127
+short 	2 bytes 	Stores whole numbers from -32,768 to 32,767
+int 	4 bytes 	Stores whole numbers from -2,147,483,648 to 2,147,483,647
+long 	8 bytes 	Stores whole numbers from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+float 	4 bytes 	Stores fractional numbers. Sufficient for storing 6 to 7 decimal digits
+double 	8 bytes 	Stores fractional numbers. Sufficient for storing 15 decimal digits
+boolean 	1 bit 	Stores true or false values
+char 	2 bytes 	Stores a single character/letter or ASCII values
+                    </pre>
+
+                </li>
+                <li>
+                    Operators
+                    <p>
+                        Java divides the operators into the following groups:
+                    </p>
+                    <pre>
+    Arithmetic operators
+    Assignment operators
+    Comparison operators
+    Logical operators
+    Bitwise operators
+                    </pre>
+                </li>
+                <li>
+                    Arrays
+                    <p>
+                        Arrays are used to store multiple values in a single variable, instead of declaring separate variables for each value.
+
+                        To declare an array, define the variable type with square brackets:
+                    </p>
+                    <pre>
+String[] cars;
+                    </pre>
+                    <p>
+                        We have now declared a variable that holds an array of strings. To insert values to it, you can place the values in a comma-separated list, inside curly braces:
+                    </p>
+                    <pre>
+String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+                    </pre>
+                    <p>
+                        To create an array of integers, you could write:
+                    </p>
+                    <pre>
+int[] myNum = {10, 20, 30, 40};
+                    </pre>
+                    <h4>Access the Elements of an Array</h4>
+                    <p>
+                        You can access an array element by referring to the index number.
+
+                        This statement accesses the value of the first element in cars:
+                    </p>
+                    <pre>
+String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+System.out.println(cars[0]);
+// Outputs Volvo
+                    </pre>
+                    <h4>Change an Array Element</h4>
+                    <p>
+                        To change the value of a specific element, refer to the index number:
+                    </p>
+                    <pre>cars[0] = "Opel";
+
+
+String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+cars[0] = "Opel";
+System.out.println(cars[0]);
+// Now outputs Opel instead of Volvo
+
+                    </pre>
+                    <h4>Array Length</h4>
+                    <p>
+                        To find out how many elements an array has, use the length property:
+                    </p>
+                    <pre>String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+System.out.println(cars.length);
+// Outputs 4
+                    </pre>
+                </li>
+                <li>
+                    Test Yourself With Exercises
+                    <form asp-action="SubmitAssignment" asp-controller="Assignment" method="post" enctype="multipart/form-data">
+                        <p>Create an array of type String called cars.</p>
+                        <label for="assignment">Upload Assignment:</label>
+                        <input type="file" id="submitAssignment" name="assignment" />
+                        <br /><br />
+                        <button type="submit">
+                            Submit
+                        </button>
+                    </form>
+                </li>
+            </ul>
         </div>
     </div>
     <div class="title-module">
-        <h2 class="title">Module 4: Operators and Operations with primitive types <img src="~/img/pngwing.com.png" class="arrow" /> </h2>
+        <h2 class="title">Module 4: Strings in Java <img src="~/img/pngwing.com.png" class="arrow" /> </h2>
         <div class="drop-content">
-            <p>This is the first paragraph.</p>
-            <p>This is the second paragraph.</p>
-            <p>This is the third paragraph.</p>
+            <ul>
+                <li>
+                    String: object creation and main methods overview
+                    <p>
+                        Strings are used for storing text.
+
+                        A String variable contains a collection of characters surrounded by double quotes:
+                    </p>
+                    <pre>Create a variable of type String and assign it a value:
+                        
+String greeting = "Hello";
+                    </pre>
+                    <h4>String Length</h4>
+                    <p>
+                        A String in Java is actually an object, which contain methods that can perform certain operations on strings. For example, the length of a string can be found with the length() method:
+                    </p>
+                    <pre>String txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+System.out.println("The length of the txt string is: " + txt.length());
+                    </pre>
+                    <h4>Finding a Character in a String</h4>
+                    <p>
+                        The indexOf() method returns the index (the position) of the first occurrence of a specified text in a string (including whitespace):
+                    </p>
+                    <pre>String txt = "Please locate where 'locate' occurs!";
+System.out.println(txt.indexOf("locate")); // Outputs 7
+                    </pre>
+                </li>
+            </ul>
         </div>
     </div>
     <div class="title-module">
-        <h2 class="title">Module 5: Strings in Java <img src="~/img/pngwing.com.png" class="arrow" /> </h2>
+        <h2 class="title">Module 5: Control Statements <img src="~/img/pngwing.com.png" class="arrow" /> </h2>
         <div class="drop-content">
-            <p>This is the first paragraph.</p>
-            <p>This is the second paragraph.</p>
-            <p>This is the third paragraph.</p>
+            <ul>
+                <li>
+                    'if - else‘ construction
+                    <p>
+                        You already know that Java supports the usual logical conditions from mathematics:
+                    </p>
+                    <pre>
+    Less than: a &lt; b
+    Less than or equal to: a &gt; b
+    Greater than: a > b
+    Greater than or equal to: a >= b
+    Equal to a == b
+    Not Equal to: a != b
+                    </pre>
+                    <p>
+                        You can use these conditions to perform different actions for different decisions.
+
+                        Java has the following conditional statements:
+                    </p>
+                    <pre>
+    Use if to specify a block of code to be executed, if a specified condition is true
+    Use else to specify a block of code to be executed, if the same condition is false
+    Use else if to specify a new condition to test, if the first condition is false
+    Use switch to specify many alternative blocks of code to be executed
+                    </pre>
+                    <pre>Use the if statement to specify a block of Java code to be executed if a condition is true.
+                    
+                    if (condition) {
+                      // block of code to be executed if the condition is true
+                    }
+                    </pre>
+                </li>
+                <li>
+                    'switch' construction
+                    <p>
+                        Instead of writing many if..else statements, you can use the switch statement.
+
+                        The switch statement selects one of many code blocks to be executed:
+                    </p>
+                    <pre>
+                    switch(expression) {
+                      case x:
+                        // code block
+                        break;
+                      case y:
+                        // code block
+                        break;
+                      default:
+                        // code block
+                    }
+                    </pre>
+                    <p>This is how it works:</p>
+                    <pre>
+    The switch expression is evaluated once.
+    The value of the expression is compared with the values of each case.
+    If there is a match, the associated block of code is executed.
+    The break and default keywords are optional, and will be described later in this chapter
+                    </pre>
+                    <h4>Example:</h4>
+                    <pre>int day = 4;
+switch (day) {
+  case 1:
+    System.out.println("Monday");
+    break;
+  case 2:
+    System.out.println("Tuesday");
+    break;
+  case 3:
+    System.out.println("Wednesday");
+    break;
+  case 4:
+    System.out.println("Thursday");
+    break;
+  case 5:
+    System.out.println("Friday");
+    break;
+  case 6:
+    System.out.println("Saturday");
+    break;
+  case 7:
+    System.out.println("Sunday");
+    break;
+}
+// Outputs "Thursday" (day 4)
+                    </pre>
+                    <h4>the break Keyword</h4>
+                    <p>
+                        When Java reaches a break keyword, it breaks out of the switch block.
+
+                        This will stop the execution of more code and case testing inside the block.
+
+                        When a match is found, and the job is done, it's time for a break. There is no need for more testing.
+                    </p>
+                </li>
+            </ul>
         </div>
     </div>
     <div class="title-module">
-        <h2 class="title">Module 6: Control Statements <img src="~/img/pngwing.com.png" class="arrow" /> </h2>
+        <h2 class="title">Module 6: Iteration Statements (Loops) in Java <img src="~/img/pngwing.com.png" class="arrow" /> </h2>
         <div class="drop-content">
-            <p>This is the first paragraph.</p>
-            <p>This is the second paragraph.</p>
-            <p>This is the third paragraph.</p>
+            <ul>
+                <li>
+                    'while' loop
+                    <p>
+                        The while loop loops through a block of code as long as a specified condition is true:
+                    </p>
+                    <pre>
+                    while (condition) {
+                    // code block to be executed
+                    }
+                    </pre>
+                </li>
+                <li>
+                    'do-while' loop
+                    <p>
+                        The do/while loop is a variant of the while loop. This loop will execute the code block once, before checking if the condition is true, then it will repeat the loop as long as the condition is true.
+                    </p>
+                    <pre>
+                    do {
+                      // code block to be executed
+                    }
+                    while (condition);
+
+
+                    </pre>
+                </li>
+                <li>
+                    'for' with condition loop
+                    <p>
+                        When you know exactly how many times you want to loop through a block of code, use the for loop instead of a while loop:
+                    </p>
+                    <pre>
+                    for (statement 1; statement 2; statement 3) {
+                    // code block to be executed
+                    }
+
+Statement 1 is executed (one time) before the execution of the code block.
+
+Statement 2 defines the condition for executing the code block.
+
+Statement 3 is executed (every time) after the code block has been executed.
+                    </pre>
+                </li>
+                <li>
+                    Test Yourself With Exercises
+                    <form asp-action="SubmitAssignment" asp-controller="Assignment" method="post" enctype="multipart/form-data">
+                        <p>Print the numbers 0 to 4 using loops.</p>
+                        <label for="assignment">Upload Assignment:</label>
+                        <input type="file" id="submitAssignment" name="assignment" />
+                        <br /><br />
+                        <button type="submit">
+                            Submit
+                        </button>
+                    </form>
+                </li>
+            </ul>
         </div>
     </div>
     <div class="title-module">
-        <h2 class="title">Module 7: Iteration Statements (Loops) in Java <img src="~/img/pngwing.com.png" class="arrow" /> </h2>
+        <h2 class="title">Module 7: Methods in Java <img src="~/img/pngwing.com.png" class="arrow" /> </h2>
         <div class="drop-content">
-            <p>This is the first paragraph.</p>
-            <p>This is the second paragraph.</p>
-            <p>This is the third paragraph.</p>
+            <ul>
+                <li>
+                    Methods in Java: Overview
+                    <p>
+                        A method is a block of code which only runs when it is called.
+
+                        You can pass data, known as parameters, into a method.
+
+                        Methods are used to perform certain actions, and they are also known as functions.
+
+                        Why use methods? To reuse code: define the code once, and use it many times.
+                    </p>
+                    <h4>
+                        Create a Method
+                    </h4>
+                    <p>
+                        A method must be declared within a class. It is defined with the name of the method, followed by parentheses (). Java provides some pre-defined methods, such as System.out.println(), but you can also create your own methods to perform certain actions:
+                    </p>
+                    <pre>
+                    public class Main {
+                      static void myMethod() {
+                        // code to be executed
+                      }
+                    }
+
+
+myMethod() is the name of the method
+static means that the method belongs to the Main class and not an object of the Main class. You will learn more about objects and how to access methods through objects later in this tutorial.
+void means that this method does not have a return value. You will learn more about return values later in this chapter
+
+                    </pre>
+                    <h4>
+                        Call a Method
+                    </h4>
+                    <p>
+                        To call a method in Java, write the method's name followed by two parentheses () and a semicolon;
+
+                        In the following example, myMethod() is used to print a text (the action), when it is called:
+                    </p>
+                    <pre>public class Main {
+  static void myMethod() {
+    System.out.println("I just got executed!");
+  }
+
+  public static void main(String[] args) {
+    myMethod();
+  }
+}
+
+// Outputs "I just got executed!"
+
+                    </pre>
+                </li>
+                <li>
+                    Recursive methods
+                    <p>
+                        Recursion is the technique of making a function call itself. This technique provides a way to break complicated problems down into simple problems which are easier to solve.
+
+                        Recursion may be a bit difficult to understand. The best way to figure out how it works is to experiment with it.
+                    </p>
+                    <h4>Example on Recursion</h4>
+                    <p>
+                        Adding two numbers together is easy to do, but adding a range of numbers is more complicated. In the following example, recursion is used to add a range of numbers together by breaking it down into the simple task of adding two numbers:
+                    </p>
+                    <pre>Use recursion to add all of the numbers up to 10.
+
+public class Main {
+  public static void main(String[] args) {
+    int result = sum(10);
+    System.out.println(result);
+  }
+  public static int sum(int k) {
+    if (k > 0) {
+      return k + sum(k - 1);
+    } else {
+      return 0;
+    }
+  }
+}
+                    </pre>
+                </li>
+            </ul>
         </div>
     </div>
     <div class="title-module">
-        <h2 class="title">Module 8: Methods in Java <img src="~/img/pngwing.com.png" class="arrow" /> </h2>
+        <h2 class="title">References <img src="~/img/pngwing.com.png" class="arrow" /> </h2>
         <div class="drop-content">
-            <p>This is the first paragraph.</p>
-            <p>This is the second paragraph.</p>
-            <p>This is the third paragraph.</p>
+            <ul>
+                <li>
+                    <a href="https://cse110textbook.s3-us-west-1.amazonaws.com/Java+Concepts+3rd+3E+Cay+Horstmann.pdf" target="_blank">Java Concepts Book</a>
+                </li>
+            </ul>
         </div>
     </div>
 </body>

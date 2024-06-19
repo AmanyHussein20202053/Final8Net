@@ -6,6 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
 	  <ServerGarbageCollection>false</ServerGarbageCollection>
 	  <EnvironmentName>Development</EnvironmentName>
+	  <UserSecretsId>8c9cfa92-f116-40fe-86dc-367c0c89a223</UserSecretsId>
 	</PropertyGroup>
 
   <ItemGroup>

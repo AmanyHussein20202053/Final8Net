@@ -61,23 +61,10 @@ namespace Final8Net.Controllers
                     if (student != null && VerifyPassword(model.Password, student.Password))
                     {
                         // Create claims for the authenticated user
-                        var claims = new[]
-                        {
-                        new Claim(ClaimTypes.Name, student.Email),
-                        new Claim(ClaimTypes.NameIdentifier, student.Email)
-                        // Add more claims as needed
-                    };
-
-                        var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-
-                        var principal = new ClaimsPrincipal(identity);
-
-                        // Sign in the user
-                        await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
-
+                        await SignInUser(student.Email);
                         // Set ViewBag variable
                         ViewBag.IsLoggedIn = true;
-
+                        SetSessionVariables(student.Email);
                         // Authentication successful, redirect to home page
                         return RedirectToAction("Index", "Home");
                     }
@@ -99,29 +86,6 @@ namespace Final8Net.Controllers
                 return View(model);
             }
         }
-        public IActionResult CreateCookie()
-        {
-
-            string key = "My_Cookie";
-            string value = GenerateRandomString(10);
-            IDataProtector protector = _dataProtectionProvider.CreateProtector(typeof(AccountController).FullName);
-
-            // Encrypt the cookie value
-            string encryptedValue = protector.Protect(value);
-
-            // Set cookie options
-            CookieOptions options = new CookieOptions
-            {
-                Expires = DateTime.Now.AddMinutes(5),
-                HttpOnly = true // Ensure the cookie is accessible only through HTTP
-            };
-
-            // Set the encrypted cookie value
-            Response.Cookies.Append(key, encryptedValue, options);
-
-
-            return View("Index");
-        }
 
         private string GenerateRandomString(int length)
         {
@@ -134,11 +98,13 @@ namespace Final8Net.Controllers
         {
             if (User.Identity.IsAuthenticated)
             {
+                // Alternatively, you can remove the session cookie
+                HttpContext.Session.Clear();
+
                 // Remove the authentication cookie
                 await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
 
-                // Alternatively, you can remove the session cookie
-                HttpContext.Session.Clear();
+                
 
                 // Redirect to the home page
                 return RedirectToAction("Index", "Home");
@@ -149,22 +115,6 @@ namespace Final8Net.Controllers
                 // If the user is not authenticated, simply redirect to the home page
                 return RedirectToAction("Index", "Home");
             }
-        }
-
-        public IActionResult RemoveCookie()
-        {
-            string key = "My_Cookie";
-            string value = string.Empty;
-            CookieOptions co = new CookieOptions();
-            co.Expires = DateTime.Now.AddMinutes(-5);
-            Response.Cookies.Append(key, value, co);
-            return View("choose");
-        }
-        public IActionResult ReadCookie()
-        {
-            string key = "My_Cookie";
-            var cookivalue = Request.Cookies[key];
-            return View("Index");
         }
         public async Task<IActionResult> Auth(AuthViewModel model)
         {
@@ -268,7 +218,6 @@ namespace Final8Net.Controllers
         {
             if (ModelState.IsValid)
             {
-
                 var existingUser = await _db.unverified.FirstOrDefaultAsync(s => s.Email == model.Email);
 
                 if (existingUser != null || !IsValidEmail(model.Email) || !IsPasswordComplex(model.Password))
@@ -277,8 +226,10 @@ namespace Final8Net.Controllers
                     ModelState.AddModelError(string.Empty, "An account with this email already exists.");
                     return View(model);
                 }
+
                 // Hash the password
                 string hashedPassword = HashPassword(model.Password);
+
                 // Create new student record
                 var Unver = new UnVerified
                 {
@@ -286,36 +237,52 @@ namespace Final8Net.Controllers
                     Firstname = model.Firstname,
                     Lastname = model.Lastname,
                     Password = hashedPassword,
-                    //StatusCode =codeGenerate()
                 };
-                /*var token = GenerateJwtToken(Unver.E_Mail);
-                // Optionally, store the token in a secure HTTP-only cookie
-                HttpContext.Response.Cookies.Append("jwt", token, new CookieOptions
-                {
-                    HttpOnly = true,
-                    Secure = true,
-                    // Other cookie options as needed
-                });*/
+
                 _db.unverified.Add(Unver);
                 await _db.SaveChangesAsync();
+
                 var emailSender = new EmailSender();
-
-                //HttpContext.Session.SetInt32("SessionUserId", Unver.id);
-                //HttpContext.Session.SetString("SessionUserName", Unver.FName);
-
                 string verificationCode = codeGenerate();
 
                 // Store the verification code in session
                 HttpContext.Session.SetString("VerificationCode", verificationCode);
                 await smth0(Unver.Email, "", "", verificationCode);
-                return RedirectToAction("Auth", "Account");
 
+                // Create a cookie for the user
+                await SignInUser(Unver.Email);
+                ViewBag.IsLoggedIn = true;
+                SetSessionVariables(Unver.Email);
+                return RedirectToAction("Auth", "Account");
             }
             else
             {
                 ModelState.AddModelError(string.Empty, "Invalid email address format. Please enter a valid email address.");
                 return View(model);
             }
+        }
+
+        private async Task SignInUser(string email)
+        {
+            var claims = new[]
+            {
+                new Claim(ClaimTypes.Name, email),
+                new Claim(ClaimTypes.NameIdentifier, email)
+            };
+
+            var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+            var principal = new ClaimsPrincipal(identity);
+
+            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal, new AuthenticationProperties
+            {
+                IsPersistent = true,
+                ExpiresUtc = DateTime.UtcNow.AddMinutes(30)
+            });
+        }
+        private void SetSessionVariables(string email)
+        {
+            HttpContext.Session.SetString("UserEmail", email);
+            HttpContext.Session.SetString("IsLoggedIn", "true");
         }
         public string codeGenerate()
         {
@@ -328,37 +295,6 @@ namespace Final8Net.Controllers
                 return code.ToString("D6"); // Format as a 6-character string
             }
         }
-        //private string GenerateJwtToken(string userEmail)
-        //{
-        //    var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("my_secret_key_with_32_bytes_for_256_bits"));
-        //    var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
-
-        //    var token = new JwtSecurityToken(
-        //        issuer: "CleverCamp",
-        //        //audience: "http://www.CleverCamp.com",
-        //        claims: new[] { new Claim(ClaimTypes.Email, userEmail) },
-        //        expires: DateTime.Now.AddMinutes(5), // Token expiration time
-        //        signingCredentials: credentials
-        //    );
-
-        //    return new JwtSecurityTokenHandler().WriteToken(token);
-        //}
-        //public IActionResult Verify(string verificationCode)
-        //{
-        //    // Get the generated verification code (from wherever you generated it)
-        //    var generatedCode = codeGenerate(); // Replace with your actual generated code
-
-        //    if (verificationCode == generatedCode)
-        //    {
-        //        // Verification successful
-        //        return View("VerificationSuccess");
-        //    }
-        //    else
-        //    {
-        //        // Verification failed
-        //        return View("VerificationFailure");
-        //    }
-        //}
         public string HashPassword(string password)
         {
             return BCrypt.Net.BCrypt.HashPassword(password, BCrypt.Net.BCrypt.GenerateSalt());

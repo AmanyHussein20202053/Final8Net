@@ -1,4 +1,4 @@
-﻿@{
+﻿                                            @{
     ViewData["Title"] = "Web Design";
     Layout = "_LayoutIndex";
 }
@@ -11,65 +11,363 @@
     <div class="title-module">
         <h2 class="title">Module 1: Introduction <img src="~/img/pngwing.com.png" class="arrow" /> </h2>
         <div class="drop-content">
-            <p>This is the first paragraph.</p>
-            <p>This is the second paragraph.</p>
-            <p>This is the third paragraph.</p>
+            <ul>
+                <li>
+                    What is HTML?
+                    <p>
+                        HTML is the standard markup language for creating Web pages.
+                    </p>
+                    <pre>
+
+    HTML stands for Hyper Text Markup Language
+    HTML is the standard markup language for creating Web pages
+    HTML describes the structure of a Web page
+    HTML consists of a series of elements
+    HTML elements tell the browser how to display the content
+    HTML elements label pieces of content such as "this is a heading", "this is a paragraph", "this is a link", etc.
+
+                    </pre>
+                    <h4>A Simple HTML Document</h4>
+                    <pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Page Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;h1&gt;My First Heading&lt;/h1&gt;
+&lt;p&gt;My first paragraph.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+
+
+    The >&lt;!DOCTYPE html&gt; declaration defines that this document is an HTML5 document
+    The &lt;html&gt; element is the root element of an HTML page
+    The &lt;head&gt; element contains meta information about the HTML page
+    The &lt;title&gt; element specifies a title for the HTML page (which is shown in the browser's title bar or in the page's tab)
+    The &lt;body&gt; element defines the document's body, and is a container for all the visible contents, such as headings, paragraphs, images, hyperlinks, tables, lists, etc.
+    The &lt;h1&gt; element defines a large heading
+    The &lt;p&gt; element defines a paragraph
+                    </pre>
+
+                </li>
+                <li>
+                    What is an HTML Element?
+                    <p>
+                        An HTML element is defined by a start tag, some content, and an end tag:
+                    </p>
+                    <pre>
+                    &lt;tagname&gt; Content goes here... &lt;/tagname&gt;
+The HTML element is everything from the start tag to the end tag:
+                    </pre>
+                </li>
+            </ul>
         </div>
     </div>
     <div class="title-module">
-        <h2 class="title">Module 2: Arrays and Big-O Notation  <img src="~/img/pngwing.com.png" class="arrow" /> </h2>
+        <h2 class="title">Module 2: Attributes  <img src="~/img/pngwing.com.png" class="arrow" /> </h2>
         <div class="drop-content">
-            <p>This is the first paragraph.</p>
-            <p>This is the second paragraph.</p>
-            <p>This is the third paragraph.</p>
+            <ul>
+                <li>
+                    HTML Attributes
+                    <pre>
+
+    All HTML elements can have attributes
+    Attributes provide additional information about elements
+    Attributes are always specified in the start tag
+    Attributes usually come in name/value pairs like: name="value"
+
+                    </pre>
+                </li>
+                <li>
+                    The href Attribute
+                    <p>
+                        The &lt;a&gt; tag defines a hyperlink. The href attribute specifies the URL of the page the link goes to:
+                    </p>
+                    <pre>
+                        &lt;a href="https://www.w3schools.com"&gt;Visit W3Schools&lt;/a&gt;
+
+                    </pre>
+                </li>
+                <li>
+                    The src Attribute
+                    <p>
+                        The &lt;img&gt; tag is used to embed an image in an HTML page. The src attribute specifies the path to the image to be displayed:
+
+                    </p>
+                    <pre>
+                        &lt;img src="img_girl.jpg"&gt;
+
+                    </pre>
+                    <h4>Two ways to specify URL in src:</h4>
+                    <pre>1. Absolute URL - Links to an external image that is hosted on another website. Example: src="https://www.w3schools.com/images/img_girl.jpg".
+
+Notes: External images might be under copyright. If you do not get permission to use it, you may be in violation of copyright laws. In addition, you cannot control external images; it can suddenly be removed or changed.
+
+2. Relative URL - Links to an image that is hosted within the website. Here, the URL does not include the domain name. If the URL begins without a slash, it will be relative to the current page. Example: src="img_girl.jpg". If the URL begins with a slash, it will be relative to the domain. Example: src="/images/img_girl.jpg".
+
+Tip:<mark> It is almost always best to use relative URLs. They will not break if you change domain.</mark>
+
+                    </pre>
+                </li>
+                <li>
+                    The width and height Attributes
+                    <p>
+                        The &lt;img&gt; tag should also contain the width and height attributes, which specify the width and height of the image (in pixels):
+                    </p>
+                    <pre>
+                        &lt;img src="img_girl.jpg" width="500" height="600"&gt;
+
+                    </pre>
+                </li>
+                <li>
+                    The alt Attribute
+                    <p>
+                        The required alt attribute for the  &lt;img&gt; tag specifies an alternate text for an image, if the image for some reason cannot be displayed. This can be due to a slow connection, or an error in the src attribute, or if the user uses a screen reader.
+                    </p>
+                    <pre>
+                        &lt;img src="img_girl.jpg" alt="Girl with a jacket"&gt;
+                    </pre>
+                </li>
+                <li>
+                    Test Yourself With Exercises
+                    <form asp-action="SubmitAssignment" asp-controller="Assignment" method="post" enctype="multipart/form-data">
+                        <p>Display image with a paragraph under it.</p>
+                        <label for="assignment">Upload Assignment:</label>
+                        <input type="file" id="submitAssignment" name="assignment" />
+                        <br /><br />
+                        <button type="submit">
+                            Submit
+                        </button>
+                    </form>
+                </li>
+            </ul>
         </div>
     </div>
     <div class="title-module">
-        <h2 class="title">Module 3: Sort Algorithms <img src="~/img/pngwing.com.png" class="arrow" /> </h2>
+        <h2 class="title">Module 3: Styles - CSS <img src="~/img/pngwing.com.png" class="arrow" /> </h2>
         <div class="drop-content">
-            <p>This is the first paragraph.</p>
-            <p>This is the second paragraph.</p>
-            <p>This is the third paragraph.</p>
+            <ul>
+                <li>
+                    What is CSS?
+                    <pre>
+
+    CSS stands for Cascading Style Sheets
+    CSS describes how HTML elements are to be displayed on screen, paper, or in other media
+    CSS saves a lot of work. It can control the layout of multiple web pages all at once
+    External stylesheets are stored in CSS files
+                    </pre>
+                </li>
+                <li>
+                    Using CSS
+                    <p>
+                        CSS is used to define styles for your web pages, including the design, layout and variations in display for different devices and screen sizes.
+                    </p>
+                    <pre>body {
+  background-color: lightblue;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+}
+
+p {
+  font-family: verdana;
+  font-size: 20px;
+}
+
+                    </pre>
+                </li>
+            </ul>
         </div>
     </div>
     <div class="title-module">
-        <h2 class="title">Module 4: Lists <img src="~/img/pngwing.com.png" class="arrow" /> </h2>
+        <h2 class="title">Module 4: Selectors - CSS <img src="~/img/pngwing.com.png" class="arrow" /> </h2>
         <div class="drop-content">
-            <p>This is the first paragraph.</p>
-            <p>This is the second paragraph.</p>
-            <p>This is the third paragraph.</p>
+            <ul>
+                <li>
+                    CSS Selectors
+                    <p>
+                        CSS selectors are used to "find" (or select) the HTML elements you want to style.
+
+                        We can divide CSS selectors into five categories:
+                    </p>
+                    <pre>
+
+    Simple selectors (select elements based on name, id, class)
+    Combinator selectors (select elements based on a specific relationship between them)
+    Pseudo-class selectors (select elements based on a certain state)
+    Pseudo-elements selectors (select and style a part of an element)
+    Attribute selectors (select elements based on an attribute or attribute value)
+
+                    </pre>
+                </li>
+                <li>
+                    The CSS element Selector
+                    <p>
+                        The element selector selects HTML elements based on the element name.
+                    </p>
+                    <pre>
+p {
+  text-align: center;
+  color: red;
+}
+                    </pre>
+                </li>
+                <li>
+                    The CSS id Selector
+                    <p>
+                        The id selector uses the id attribute of an HTML element to select a specific element.
+
+                        The id of an element is unique within a page, so the id selector is used to select one unique element!
+
+                        To select an element with a specific id, write a hash (#) character, followed by the id of the element.
+                    </p>
+                    <pre>
+#para1 {
+  text-align: center;
+  color: red;
+}
+                    </pre>
+                </li>
+                <li>
+                    The CSS class Selector
+                    <p>
+                        The class selector selects HTML elements with a specific class attribute.
+
+                        To select elements with a specific class, write a period (.) character, followed by the class name.
+                    </p>
+                    <pre>
+.center {
+  text-align: center;
+  color: red;
+}
+                    </pre>
+                    <pre>Example - In this example only <p> elements with class="center" will be red and center-aligned: 
+p.center {
+  text-align: center;
+  color: red;
+} 
+                    </pre>
+                </li>
+            </ul>
         </div>
     </div>
     <div class="title-module">
-        <h2 class="title">Module 5: Stacks <img src="~/img/pngwing.com.png" class="arrow" /> </h2>
+        <h2 class="title">Module 5: JavaScript  <img src="~/img/pngwing.com.png" class="arrow" /> </h2>
         <div class="drop-content">
-            <p>This is the first paragraph.</p>
-            <p>This is the second paragraph.</p>
-            <p>This is the third paragraph.</p>
+            <ul>
+                <li>
+                    JavaScript Can Change HTML Content
+                    <p>
+                        One of many JavaScript HTML methods is getElementById().
+
+                        The example below "finds" an HTML element (with id="demo"), and changes the element content (innerHTML) to "Hello JavaScript":
+                    </p>
+                    <pre>
+document.getElementById("demo").innerHTML = "Hello JavaScript"; 
+
+document.getElementById('demo').innerHTML = 'Hello JavaScript'; 
+                    </pre>
+                </li>
+                <li>
+                    JavaScript Can Change HTML Attribute Values
+                </li>
+                <li>
+                    JavaScript Can Change HTML Styles (CSS)
+                    <p>
+                        Changing the style of an HTML element, is a variant of changing an HTML attribute:
+                    </p>
+                    <pre>
+document.getElementById("demo").style.fontSize = "35px"; 
+                    </pre>
+                </li>
+                <li>
+                    JavaScript Can Show HTML Elements
+                    <p>
+                        Showing hidden HTML elements can also be done by changing the display style:
+                    </p>
+                    <pre>
+document.getElementById("demo").style.display = "block"; 
+                    </pre>
+                </li>
+                <li>
+                    JavaScript Can Hide HTML Elements
+                    <p>
+                        Hiding HTML elements can be done by changing the display style:
+                    </p>
+                    <pre>
+document.getElementById("demo").style.display = "none"; 
+                    </pre>
+                </li>
+            </ul>
         </div>
     </div>
     <div class="title-module">
-        <h2 class="title">Module 6: Queues <img src="~/img/pngwing.com.png" class="arrow" /> </h2>
+        <h2 class="title">Module 6: Bootstrap 4 <img src="~/img/pngwing.com.png" class="arrow" /> </h2>
         <div class="drop-content">
-            <p>This is the first paragraph.</p>
-            <p>This is the second paragraph.</p>
-            <p>This is the third paragraph.</p>
+            <ul>
+                <li>
+                    What is Bootstrap?
+                    <pre>
+
+    Bootstrap is a free front-end framework for faster and easier web development
+    Bootstrap includes HTML and CSS based design templates for typography, forms, buttons, tables, navigation, modals, image carousels and many other, as well as optional JavaScript plugins
+    Bootstrap also gives you the ability to easily create responsive designs
+
+
+    &lt;div class="jumbotron text-center"&gt;
+  &lt;h1&gt;My First Bootstrap Page&lt;/h1&gt;
+  &lt;p&gt;Resize this responsive page to see the effect!&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="container"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col-sm-4"&gt;
+      &lt;h3&gt;Column 1&lt;/h3&gt;
+      &lt;p&gt;Lorem ipsum dolor..&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="col-sm-4"&gt;
+      &lt;h3&gt;Column 2&lt;/h3&gt;
+      &lt;p&gt;Lorem ipsum dolor..&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="col-sm-4"&gt;
+      &lt;h3&gt;Column 3&lt;/h3&gt;
+      &lt;p&gt;Lorem ipsum dolor..&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+                    </pre>
+                </li>
+                <li>
+                    Why Use Bootstrap?
+                    <p>
+                        Advantages of Bootstrap:
+                    </p>
+                    <pre>
+
+    Easy to use: Anybody with just basic knowledge of HTML and CSS can start using Bootstrap
+    Responsive features: Bootstrap's responsive CSS adjusts to phones, tablets, and desktops
+    Mobile-first approach: In Bootstrap, mobile-first styles are part of the core framework
+    Browser compatibility: Bootstrap 4 is compatible with all modern browsers (Chrome, Firefox, Internet Explorer 10+, Edge, Safari, and Opera)
+
+                    </pre>
+                </li>
+            </ul>
         </div>
     </div>
     <div class="title-module">
-        <h2 class="title">Module 7: Search Algorithms <img src="~/img/pngwing.com.png" class="arrow" /> </h2>
+        <h2 class="title">References <img src="~/img/pngwing.com.png" class="arrow" /> </h2>
         <div class="drop-content">
-            <p>This is the first paragraph.</p>
-            <p>This is the second paragraph.</p>
-            <p>This is the third paragraph.</p>
-        </div>
-    </div>
-    <div class="title-module">
-        <h2 class="title">Module 8: Trees <img src="~/img/pngwing.com.png" class="arrow" /> </h2>
-        <div class="drop-content">
-            <p>This is the first paragraph.</p>
-            <p>This is the second paragraph.</p>
-            <p>This is the third paragraph.</p>
+            <ul>
+                <li>
+                    <a href="https://baou.edu.in/assets/pdf/PGDCA-202_slm.pdf" target="_blank">Web Application Development Book</a>
+                </li>
+            </ul>
         </div>
     </div>
 </body>

@@ -9,78 +9,559 @@
     <h1>Coding for Everyone: C and C++</h1>
     <h2>Course Content</h2>
     <div class="title-module">
-        <h2 class="title">Module 1: Introduction to C and Basics <img src="~/img/pngwing.com.png" class="arrow" /> </h2>
+        <h2 class="title">Module 1: Introduction to C++ <img src="~/img/pngwing.com.png" class="arrow" /> </h2>
         <div class="drop-content">
-            <p>This is the first paragraph.</p>
-            <p>This is the second paragraph.</p>
-            <p>This is the third paragraph.</p>
+            <ul>
+                <li>
+                    What is C++?
+                    <p>
+                        C++ is a cross-platform language that can be used to create high-performance applications.
+                        C++ was developed by Bjarne Stroustrup, as an extension to the C language.
+                        C++ gives programmers a high level of control over system resources and memory.
+                        The language was updated 4 major times in 2011, 2014, 2017, and 2020 to C++11, C++14, C++17, C++20.
+                    </p>
+                </li>
+                <li>
+                    Why Use C++?
+                    <p>
+                        C++ is one of the world's most popular programming languages.
+                        C++ can be found in today's operating systems, Graphical User Interfaces, and embedded systems.
+                        C++ is an object-oriented programming language which gives a clear structure to programs and allows code to be reused, lowering development costs.
+                        C++ is portable and can be used to develop applications that can be adapted to multiple platforms.
+                        C++ is fun and easy to learn!
+                        As C++ is close to C, C# and Java, it makes it easy for programmers to switch to C++ or vice versa.
+                    </p>
+                </li>
+                <li>
+                    Difference between C and C++
+                    <p>
+                        C++ was developed as an extension of C, and both languages have almost the same syntax.
+                        The main difference between C and C++ is that C++ support classes and objects, while C does not.
+                    </p>
+                </li>
+            </ul>
         </div>
     </div>
     <div class="title-module">
-        <h2 class="title">Module 2: Control Structures in C <img src="~/img/pngwing.com.png" class="arrow" /> </h2>
+        <h2 class="title">Module 2: Control Structures in C++ <img src="~/img/pngwing.com.png" class="arrow" /> </h2>
         <div class="drop-content">
-            <p>This is the first paragraph.</p>
-            <p>This is the second paragraph.</p>
-            <p>This is the third paragraph.</p>
+            <ul>
+                <li>
+                    Overview of the Structure of a C++
+                    <h4>- Control Statements</h4>
+                    <p>
+                        A C++ control statement redirects the flow of a program in order to execute additional code. 
+                        These statements come in the form of conditionals (if-else, switch) and loops (for, while, do-while). 
+                        Each of them relies on a logical condition that evaluates to a boolean value in order to run one piece of code over another.
+                        <table border="1">
+                            <tr>
+                                <th>Operator</th>
+                                <th>Symbol</th>
+                                <th>Usage</th>
+                                <th>Example</th>
+                            </tr>
+                            <tr>
+                                <td>Equals</td>
+                                <td>==</td>
+                                <td>Returns true if the statements on either side of the operator are the same value; otherwise it returns false. Can be used with int, double/float, char, boolean, and string.</td>
+                                <td>x == 'A'</td>
+                            </tr>
+                            <tr>
+                                <td>Not Equal</td>
+                                <td>!=</td>
+                                <td>Returns true if the statements on either side of the operator are not the same; otherwise it returns false.</td>
+                                <td>x != 2</td>
+                            </tr>
+                            <tr>
+                                <td>Greater Than</td>
+                                <td>></td>
+                                <td>Returns true if the first term is greater than the second; otherwise it returns false. Note: If both terms are equal it returns false.</td>
+                                <td>x > 0</td>
+                            </tr>
+                            <tr>
+                                <td>Less Than</td>
+                                <td><</td>
+                                <td>Returns true if the first term is less than the second; otherwise it returns false.</td>
+                                <td>x < 10</td>
+                            </tr>
+                            <tr>
+                                <td>Greater Than or Equal To</td>
+                                <td>>=</td>
+                                <td>Returns true if the first term is greater than or equal to the second; otherwise it returns false.</td>
+                                <td>x >= 0</td>
+                            </tr>
+                            <tr>
+                                <td>Less Than or Equal To</td>
+                                <td><=</td>
+                                <td>Returns true if the first term is less than or equal to the second; otherwise it returns false.</td>
+                                <td>x <= -2</td>
+                            </tr>
+                            <tr>
+                                <td>And</td>
+                                <td>&&</td>
+                                <td>Returns true if both terms on either side of the operator are true; otherwise it returns false. It is commonly used to concatenate statements together.</td>
+                                <td>(x == 2) && (y >= 0)</td>
+                            </tr>
+                            <tr>
+                                <td>Or</td>
+                                <td>||</td>
+                                <td>Returns true if any of the terms on either side of the operator are true; otherwise it returns false.</td>
+                                <td>x || y</td>
+                            </tr>
+                            <tr>
+                                <td>Not</td>
+                                <td>!</td>
+                                <td>Negates the value of the statement that follows it.</td>
+                                <td>!(x > 2)</td>
+                            </tr>
+                        </table>
+                    </p>
+                    <h4>- Boolean Logic</h4>
+                    <p>
+                        Boolean values on their own do not appear to be very useful, however when combined with control statements they become one of the most powerful tools that any programing language has to offer.
+                        As stated in the data types notes, boolean variables (bool) can be either true or false. There are also binary operators that return a boolean value depending on specific conditions.
+                        Some operators compare, such as ==, !=, >, etc., the values on either side of it and return true if the entire statement is true. Others, work with boolean values to return another boolean, such as && and ||.
+                    </p>
+                    <h4>- If-Else</h4>
+                    <p>
+                        If-Else statements allow the program to execute different blocks of code depending on conditionals. All If statements have the following form:
+                        <pre>
+                        if ( condition ) {
+                        //body
+                        }
+                        </pre>
+                        An If statement executes the code in the body section if the condition evaluates to True, otherwise it skips the body.
+                        When the condition evaluates to False, the program will either test another condition with a following Else-if, run the code inside an Else statement, 
+                        or continue as normal if neither an Else-if nor Else block exist.
+                        An Else statement acts as a default case for If statements. In the case that an If is directly followed by an Else and the condition is false, the code in the Else is executed. Else statements do not have a condition themselves.
+                        <pre>
+                        if ( condition ) {
+                        //body
+                        } else {
+                        // else body
+                        }
+                        </pre>
+                        An If statement can followed by any number of Else-if blocks. Each Else-if has its own conditional statement and body of code. If an Else-if conditional is False, 
+                        then its body of code is skipped and the program will check the next Else-if in order that they appear. An If followed by a long list of Else-IF's is usually referred to as an If-Else ladder.
+                        <pre>
+                        if ( condition ) {
+                        //body
+                        } else if ( 2nd condition ) {
+                        // else if body
+                        } else {
+                        // else body
+                        }
+                        </pre>
+                    </p>
+                    <h4>- While Loop</h4>
+                    <p>
+                        A while loop is a simple loop that will run the same code over and over as long as a given conditional is true.
+                        The condition is checked at the beginning of each run through the loop ( including the first one ). If the conditional is false for the beginning,
+                        the while loop will be skipped all together.
+                        <pre>
+                        while ( conditional ) {
+                        // loop body
+                        }
+                        </pre>
+                    </p>
+                    <h4>- Do-while Loop</h4>
+                    <p>
+                        A do-while loop acts just like a while loop, except the condition is checked at the end of each pass through the loop body.
+                        This means a do-while loop will execute at least once.
+                    </p>
+                    <pre>
+
+                        do {
+                        // loop body
+                        } while ( condition );
+                    </pre>
+                    <h4>- Break</h4>
+                    <p>
+                        Break is a useful keyword that allows the program to exit a loop or switch statement before the expected end of a that code block.
+                        This is useful in error checking or if the outcome of a loop is not certain. For example, the following code will break out of the for loop if a user asks to leave.<br />
+                        
+                     </p>
+                    <pre>string inputs[10];
+string input;
+for (int i = 0; i < 10; i++ ) {
+cin >> input;
+if ( input == "quit" ) {
+break;
+}
+inputs[i] = input;
+}<br />
+                    </pre>
+                </li>
+                <li>
+                    Syntax of C++
+                    <pre>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+cout << "Hello World!";
+   return 0;
+}
+                    </pre>
+                    <span>
+                        Line 1: #include <iostream> is a header file library that lets us work with input and output objects, such as cout (used in line 5). Header files add functionality to C++ programs.
+                            </span><br />
+                    <span>
+                        Line 2: using namespace std means that we can use names for objects and variables from the standard library.
+                    </span><br />
+                    <span>
+                        Line 3: A blank line. C++ ignores white space. But we use it to make the code more readable.
+                    </span><br />
+                    <span>
+                        Line 5: cout (pronounced "see-out") is an object used together with the insertion operator (<<) to output /print text. In our example, it will output "Hello World!" .
+                    </span><br />
+                    Note:<mark>- Every C++ statement ends with a semicolon ;.</mark><br />
+                    <mark>
+                        - The body of int main() could also been written as:
+                        int main () { cout << "Hello World! "; return 0; }
+                    </mark><br />
+                    <span>
+                        Line 6: return 0 ends the main function.
+                    </span><br />
+                    <span>
+                    Line 7: Do not forget to add the closing curly bracket } to actually end the main function.
+                    </span><br />
+                </li>
+                <li>
+                    Test Yourself With Exercises
+                    <form asp-action="SubmitAssignment" asp-controller="Assignment" method="post" enctype="multipart/form-data">
+                        <p>Print i as long as i is less than 6 with while loop.</p>
+                        <label for="assignment">Upload Assignment:</label>
+                        <input type="file" id="submitAssignment" name="assignment" />
+                        <br /><br />
+                        <button type="submit">
+                            Submit
+                        </button>
+                    </form>
+                    <form asp-action="SubmitAssignment" asp-controller="Assignment" method="post" enctype="multipart/form-data">
+                        <p>Insert the missing parts to complete the following switch statement.</p>
+                        <label for="assignment">Upload Assignment:</label>
+                        <input type="file" id="submitAssignment" name="assignment" />
+                        <br /><br />
+                        <button type="submit">
+                            Submit
+                        </button>
+                    </form>
+                    <form asp-action="SubmitAssignment" asp-controller="Assignment" method="post" enctype="multipart/form-data">
+                        <p>
+                            Use a for loop to print "Yes" 5 times:
+                        </p>
+                        <label for="assignment">Upload Assignment:</label>
+                        <input type="file" id="submitAssignment" name="assignment" />
+                        <br /><br />
+                        <button type="submit">
+                            Submit
+                        </button>
+                    </form>
+                </li>
+            </ul>
         </div>
     </div>
     <div class="title-module">
         <h2 class="title">Module 3: Functions <img src="~/img/pngwing.com.png" class="arrow" /> </h2>
-        <div class="drop-content">
-            <p>This is the first paragraph.</p>
-            <p>This is the second paragraph.</p>
-            <p>This is the third paragraph.</p>
+        <div class="drop-content">            
+            <ul>
+                <li>
+                    Introduction to Functions
+                    <p>
+                        C++ provides some pre-defined functions, such as main(), which is used to execute code. 
+                        But you can also create your own functions to perform certain actions.
+
+                        To create (often referred to as declare) a function, specify the name of the function, followed by parentheses ():
+                        <pre>
+                            void myFunction() {
+                            // code to be executed
+                            }
+                        </pre><br />
+                        <p>myFunction() is the name of the function</p>
+                        <p>void means that the function does not have a return value. You will learn more about return values later in the next chapter</p>
+                        <p>inside the function (the body), add code that defines what the function should do</p>
+
+                    </p>
+                </li>
+                <li>
+                    Call a Function
+                    <p>
+                        Declared functions are not executed immediately. They are "saved for later use", and will be executed later, when they are called.
+
+                        To call a function, write the function's name followed by two parentheses () and a semicolon ;
+
+                        In the following example, myFunction() is used to print a text (the action), when it is called:
+                    </p>
+                    <pre> // Create a function
+ void myFunction() {
+    cout << "I just got executed!";
+ }
+
+ int main() {
+    myFunction(); // call the function
+    return 0;
+ }
+
+ // Outputs "I just got executed!"
+                    </pre>
+                    <span>Multiple function calls:</span>
+                    <pre>void myFunction() {
+   cout << "I just got executed!\n";
+}
+
+int main() {
+   myFunction();
+   myFunction();
+   myFunction();
+   return 0;
+}   
+
+// I just got executed!
+// I just got executed!
+// I just got executed!
+                    </pre>
+                </li>
+                <li>
+                    Test Yourself With Exercises
+                    <form asp-action="SubmitAssignment" asp-controller="Assignment" method="post" enctype="multipart/form-data">
+                        <p>Create a function named myFunction and call it inside main().</p>
+                        <label for="assignment">Upload Assignment:</label>
+                        <input type="file" id="submitAssignment" name="assignment" />
+                        <br /><br />
+                        <button type="submit">
+                            Submit
+                        </button>
+                    </form>
+                </li>
+                <li>
+                    Recursion
+                    <p>
+                        Recursion is the technique of making a function call itself. This technique provides a way to break complicated problems down into simple problems which are easier to solve.
+
+                        Recursion may be a bit difficult to understand. The best way to figure out how it works is to experiment with it.
+                    </p>
+                    <h4>Recursion Example</h4>
+                    <p>Adding two numbers together is easy to do, but adding a range of numbers is more complicated. In the following example, recursion is used to add a range of numbers together by breaking it down into the simple task of adding two numbers:</p>
+                    <pre>int sum(int k) {
+     if (k > 0) {
+     return k + sum(k - 1);
+   } else {
+      return 0;
+   }
+ }
+
+int main() {
+int result = sum(10);
+cout << result;   
+return 0;
+} 
+                    </pre>
+                </li>
+            </ul>
         </div>
     </div>
     <div class="title-module">
-        <h2 class="title">Module 4: Pointers in C <img src="~/img/pngwing.com.png" class="arrow" /> </h2>
+        <h2 class="title">Module 4: Classes in C++ <img src="~/img/pngwing.com.png" class="arrow" /> </h2>
         <div class="drop-content">
-            <p>This is the first paragraph.</p>
-            <p>This is the second paragraph.</p>
-            <p>This is the third paragraph.</p>
+            <ul>
+                <li>
+                    C++ What is OOP?
+                    <p>
+                        OOP stands for Object-Oriented Programming.
+
+                        Procedural programming is about writing procedures or functions that perform operations on the data, while object-oriented programming is about creating objects that contain both data and functions.
+
+                        Object-oriented programming has several advantages over procedural programming:
+
+                        OOP is faster and easier to execute
+                        OOP provides a clear structure for the programs
+                        OOP helps to keep the C++ code DRY "Don't Repeat Yourself", and makes the code easier to maintain, modify and debug
+                        OOP makes it possible to create full reusable applications with less code and shorter development time
+
+                        Tip: The "Don't Repeat Yourself" (DRY) principle is about reducing the repetition of code. You should extract out the codes that are common for the application, and place them at a single place and reuse them instead of repeating it.
+                    </p>
+                </li>
+                <li>
+                    Methods and Constructors
+                    <h4>- Methods</h4>
+                    <p>
+                        Methods are functions that belongs to the class.
+
+                        There are two ways to define functions that belongs to a class:
+
+                        Inside class definition
+                        Outside class definition
+
+                        In the following example, we define a function inside the class, and we name it "myMethod".
+
+                        Note: You access methods just like you access attributes; by creating an object of the class and using the dot syntax (.):
+                    
+                    </p>
+                    <pre>class MyClass {        // The class
+  public:              // Access specifier
+    void myMethod() {  // Method/function defined inside the class
+      cout << "Hello World!";
+    }
+};
+
+int main() {
+  MyClass myObj;     // Create an object of MyClass
+  myObj.myMethod();  // Call the method
+  return 0;
+}
+                    </pre><br />
+                    <pre>#include  &lt;iostream&gt;
+using namespace std;
+
+class Car {
+  public:
+    int speed(int maxSpeed);
+};
+
+int Car::speed(int maxSpeed) {
+  return maxSpeed;
+}
+
+int main() {
+  Car myObj; // Create an object of Car
+  cout << myObj.speed(200); // Call the method with an argument
+  return 0;
+}
+                    </pre><br />
+                    <h4>- Constructors</h4>
+                    <p>
+                        A constructor in C++ is a special method that is automatically called when an object of a class is created.
+
+                        To create a constructor, use the same name as the class, followed by parentheses ():
+                    </p>
+                    <pre>class MyClass {     // The class
+  public:           // Access specifier
+    MyClass() {     // Constructor
+      cout << "Hello World!";
+    }
+};
+
+int main() {
+  MyClass myObj;    // Create an object of MyClass (this will call the constructor)
+  return 0;
+}
+                    </pre><br />
+                    <h5>Constructor Parameters</h5>
+                    <p>
+                        Constructors can also take parameters (just like regular functions), which can be useful for setting initial values for attributes.
+
+                        The following class have brand, model and year attributes, and a constructor with different parameters. Inside the constructor we set the attributes equal to the constructor parameters (brand=x, etc). When we call the constructor (by creating an object of the class), we pass parameters to the constructor, which will set the value of the corresponding attributes to the same:
+                    </p>
+                    <pre>class Car {        // The class
+  public:          // Access specifier
+    string brand;  // Attribute
+    string model;  // Attribute
+    int year;      // Attribute
+    Car(string x, string y, int z) { // Constructor with parameters
+      brand = x;
+      model = y;
+      year = z;
+    }
+};
+
+int main() {
+  // Create Car objects and call the constructor with different values
+  Car carObj1("BMW", "X5", 1999);
+  Car carObj2("Ford", "Mustang", 1969);
+
+  // Print values
+  cout << carObj1.brand << " " << carObj1.model << " " << carObj1.year << "\n";
+  cout << carObj2.brand << " " << carObj2.model << " " << carObj2.year << "\n";
+  return 0;
+}
+                    </pre><br />
+                </li>
+            </ul>
         </div>
     </div>
     <div class="title-module">
-        <h2 class="title">Module 5: Arrays in C <img src="~/img/pngwing.com.png" class="arrow" /> </h2>
+        <h2 class="title">Module 5: Arrays in C++ <img src="~/img/pngwing.com.png" class="arrow" /> </h2>
         <div class="drop-content">
-            <p>This is the first paragraph.</p>
-            <p>This is the second paragraph.</p>
-            <p>This is the third paragraph.</p>
+            <ul>
+                <li>
+                    C++ Arrays
+                    <p>
+                        Arrays are used to store multiple values in a single variable, instead of declaring separate variables for each value.
+
+                        To declare an array, define the variable type, specify the name of the array followed by square brackets and specify the number of elements it should store:
+                    </p>
+                    <pre>string cars[4];</pre>
+                    <p>We have now declared a variable that holds an array of four strings. To insert values to it, we can use an array literal - place the values in a comma-separated list, inside curly braces:</p>
+                    <pre>string cars[4] = {"Volvo", "BMW", "Ford", "Mazda"};</pre>
+                    <p>To create an array of three integers, you could write:</p>
+                    <pre>int myNum[3] = {10, 20, 30};</pre>
+                </li>
+                <li>
+                    Access the Elements of an Array
+                    <p>
+                        You access an array element by referring to the index number inside square brackets [].
+
+                        This statement accesses the value of the first element in cars:
+                    </p>
+                    <pre>string cars[4] = {"Volvo", "BMW", "Ford", "Mazda"};
+cout << cars[0];
+// Outputs Volvo</pre>
+                </li>
+                <li>
+                    Change an Array Element
+                    <p>To change the value of a specific element, refer to the index number:</p>
+                    <pre>cars[0] = "Opel";</pre><br />
+                    <pre>string cars[4] = {"Volvo", "BMW", "Ford", "Mazda"};
+cars[0] = "Opel";
+cout << cars[0];
+// Now outputs Opel instead of Volvo</pre>
+                </li>
+                <li>
+                    Test Yourself With Exercises
+                    <form asp-action="SubmitAssignment" asp-controller="Assignment" method="post" enctype="multipart/form-data">
+                        <p>Create an array of type string called cars.</p>
+                        <label for="assignment">Upload Assignment:</label>
+                        <input type="file" id="submitAssignment" name="assignment" />
+                        <br /><br />
+                        <button type="submit">
+                            Submit
+                        </button>
+                    </form>
+                </li>
+            </ul>
         </div>
     </div>
     <div class="title-module">
-        <h2 class="title">Module 6: Files in C <img src="~/img/pngwing.com.png" class="arrow" /> </h2>
+        <h2 class="title">Module 6: Libraries <img src="~/img/pngwing.com.png" class="arrow" /> </h2>
         <div class="drop-content">
-            <p>This is the first paragraph.</p>
-            <p>This is the second paragraph.</p>
-            <p>This is the third paragraph.</p>
+            <ul>
+                <li>
+                    Introduction to Objects of Libraries
+                    <p>A list of C++ keywords and popular libraries can be found here:</p>
+                    <pre>
+                        Keywords,
+                        &lt;iostream&gt;,
+                            &lt;fstream&gt;,
+                                &lt;cmath&gt;,
+                                    &lt;string&gt;,
+                                        &lt;cstring&gt;,
+                                             &lt;ctime&gt;
+                    </pre>
+                </li>
+            </ul>
         </div>
     </div>
-
-    <section style="margin-left: 3%;">
-        <h2>Assignments</h2>
-        <!-- <form> -->
-        <label for="assignment">Upload Assignment:</label>
-        <input type="file" id="submitAssignment" name="assignment" />
-        <br /><br />
-        <button type="submit" onclick="submit()" style="background-color: black; color: white; width: 10%;
-              height: 5%;">
-            Submit
-        </button>
-        <!-- </form> -->
-        <h2 style="margin-top: 4%;">Quiz</h2>
-        <form action="~/Quiz/CPlusPlusQ">
-            <button type="submit" style="background-color: black; color: white; width: 10%;
-                height: 5%;">
-                Take Quiz
-            </button>
-        </form>
-        <p id="response"></p>
-    </section>
-
- 
-    <!-- Back to Top -->
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-
-    <script src="js/main.js"></script>
+    <div class="title-module">
+        <h2 class="title">References <img src="~/img/pngwing.com.png" class="arrow" /> </h2>
+        <div class="drop-content">
+            <ul>
+                <li>
+                    <a href="http://www.lmpt.univ-tours.fr/~volkov/C++.pdf" target="_blank">
+                        A Complete Guide to
+                        Programming in C++
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
 </body>
