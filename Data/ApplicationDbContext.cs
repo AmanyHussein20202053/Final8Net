@@ -12,5 +12,6 @@ namespace Final8Net.Data
         //Table In MySQL Name
         public DbSet<Student> student { get; set; }
         public DbSet<UnVerified> unverified { get; set; }
+        public DbSet<Course> Course { get; set; }
     }
 }

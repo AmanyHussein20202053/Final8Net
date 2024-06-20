@@ -24,11 +24,13 @@ namespace Final8Net.Controllers
         private readonly ILogger<AccountController> _logger;
         private readonly ApplicationDbContext _db;
         private readonly IEmailSender emailSender;
+        private readonly IEmailSign emailSigner;
         private readonly IAuthenticationServices _authenticationService;
         private readonly IDataProtectionProvider _dataProtectionProvider;
-        public AccountController(IEmailSender emailSender, ILogger<AccountController> logger, ApplicationDbContext db, IAuthenticationServices authenticationService, IDataProtectionProvider dataProtectionProvider)
+        public AccountController(IEmailSender emailSender, IEmailSign emailSigner, ILogger<AccountController> logger, ApplicationDbContext db, IAuthenticationServices authenticationService, IDataProtectionProvider dataProtectionProvider)
         {
             this.emailSender = emailSender;
+            this.emailSigner=emailSigner; 
             _db = db;
             _logger = logger;
             _authenticationService = authenticationService;
@@ -41,6 +43,11 @@ namespace Final8Net.Controllers
         public async Task<IActionResult> smth0(string email, string subject, string message , string verificationCode)
         {
             await emailSender.SendEmailAsync(email, subject, message, verificationCode);
+            return RedirectToAction("Index", "Home");
+        }
+        public async Task<IActionResult> smth1(string email, string subject, string message, string verificationCode)
+        {
+            await emailSigner.SendEmailLoginlAsync(email, subject, message, verificationCode);
             return RedirectToAction("Index", "Home");
         }
         public IActionResult Login()
@@ -61,12 +68,22 @@ namespace Final8Net.Controllers
                     if (student != null && VerifyPassword(model.Password, student.Password))
                     {
                         // Create claims for the authenticated user
+
+                        // Authentication successful, redirect to home page
+                        var emailSigner = new EmailSigner();
+                        string verificationCode = codeGenerate();
+
+                        // Store the verification code in session
+                        HttpContext.Session.SetString("VerificationCode", verificationCode);
+                        await smth1(model.Email, "", "", verificationCode);
+
+                        // Create a cookie for the user
                         await SignInUser(student.Email);
                         // Set ViewBag variable
                         ViewBag.IsLoggedIn = true;
                         SetSessionVariables(student.Email);
-                        // Authentication successful, redirect to home page
-                        return RedirectToAction("Index", "Home");
+                        return RedirectToAction("Factor", "Account");
+
                     }
                     else
                     {
@@ -86,7 +103,34 @@ namespace Final8Net.Controllers
                 return View(model);
             }
         }
+        public async Task<IActionResult> Factor(FactorViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                // Retrieve the verification code stored in session
+                string storedVerificationCode = HttpContext.Session.GetString("VerificationCode");
 
+                // Compare the verification code entered by the user with the stored one
+                if (model.Code == storedVerificationCode)
+                {
+                    // Verification successful, proceed with authentication
+                    // Clear the stored verification code from session
+                    HttpContext.Session.Remove("VerificationCode");
+                    //await CreateStudentFromUnverified(model.Email);
+                    //await RemoveUnverifiedUser(model.email);
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    ModelState.AddModelError(string.Empty, "Invalid verification code.");
+                    return View(model);
+                }
+            }
+            else
+            {
+                return View(model);
+            }
+        }
         private string GenerateRandomString(int length)
         {
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
