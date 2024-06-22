@@ -7,6 +7,8 @@
 	  <ServerGarbageCollection>false</ServerGarbageCollection>
 	  <EnvironmentName>Development</EnvironmentName>
 	  <UserSecretsId>8c9cfa92-f116-40fe-86dc-367c0c89a223</UserSecretsId>
+	  <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
+	  <DockerfileContext>.</DockerfileContext>
 	</PropertyGroup>
 
   <ItemGroup>
@@ -28,6 +30,7 @@
     </PackageReference>
     <PackageReference Include="Microsoft.Net.Http.Headers" Version="8.0.4" />
     <PackageReference Include="Microsoft.NETCore.Platforms" Version="7.0.4" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.6" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.2" />
     <PackageReference Include="MySqlConnector" Version="2.3.5" />
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="8.0.0" />
